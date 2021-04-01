@@ -1,0 +1,6 @@
+# @package _group_
+num_classes: 3
+valid_positive_text_samples: 0.486666666666667
+valid_negative_text_samples: 0.4784
+valid_neutral_text_samples: 0.0349333333333333
+valid_samples: 5000

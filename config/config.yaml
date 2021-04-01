@@ -1,0 +1,44 @@
+defaults:
+  - callbacks: callbacks
+  - scheduler: linearwithwarmup
+  - optimizer: adamW
+  - classifiermode: twolabels
+  - loss_fn: bceWithLogitsLoss
+  - models: bertMCased
+  - tokenizer: berttokenizer
+
+
+
+general:
+  base_dir: ./
+  logs_dir: lightning_logs/
+  seed: 2020
+  num_workers: 2
+  gpu_list: [0]
+
+model:
+  architecture_name: bert_lstm
+  sequence_max_length : 64
+  lstm_hidden_size : 128
+
+training:
+  train_csv: data/Train.csv
+  batch_size: 32
+  lr: 3e-5
+  max_epochs: 100
+  min_epochs: 3
+  val_metric: val_accuracy
+  metric_mode: max
+
+
+testing:
+  test_csv: data/Test.csv
+
+
+
+hydra:
+  run:
+    dir: ${general.base_dir}
+  sweep:
+    dir: ${general.base_dir}
+    subdir: ""

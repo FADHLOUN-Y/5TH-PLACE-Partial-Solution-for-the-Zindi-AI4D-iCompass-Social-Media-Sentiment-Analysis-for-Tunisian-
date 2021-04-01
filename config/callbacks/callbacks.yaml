@@ -1,0 +1,26 @@
+# @package _group_
+
+tensorboard:
+  _target_: pytorch_lightning.loggers.TensorBoardLogger
+  save_dir: ${general.logs_dir}
+  name: ${model.architecture_name}_random_${general.seed}_${classifiermode.num_classes}Labels
+  version: seed_${general.seed}
+
+early_stopping:
+  _target_: pytorch_lightning.callbacks.EarlyStopping
+  monitor: ${training.val_metric}
+  mode: ${training.metric_mode}
+  patience: 2
+  verbose: true
+
+model_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  dirpath: ${general.logs_dir}/checkpoints/${model.architecture_name}${classifiermode.num_classes}/
+  filename: random_${general.seed}
+  monitor: ${training.val_metric}
+  mode: ${training.metric_mode}
+  period: 1
+  save_top_k: 1
+  save_last: false
+  verbose: true
+  save_weights_only: true

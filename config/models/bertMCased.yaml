@@ -1,0 +1,3 @@
+# @package _group_
+_target_: transformers.BertModel.from_pretrained
+pretrained_model_name_or_path: bert-base-multilingual-cased

@@ -1,0 +1,7 @@
+# @package _group_
+num_classes: 1
+valid_positive_text_samples: 0.5
+valid_negative_text_samples: 0.5
+valid_neutral_text_samples: 0
+threshhold: 0.5
+valid_samples: 5000

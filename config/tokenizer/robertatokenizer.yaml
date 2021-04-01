@@ -1,0 +1,4 @@
+# @package _group_
+_target_: transformers.XLMRobertaTokenizer.from_pretrained
+pretrained_model_name_or_path: xlm-roberta-base
+do_lower_case: False

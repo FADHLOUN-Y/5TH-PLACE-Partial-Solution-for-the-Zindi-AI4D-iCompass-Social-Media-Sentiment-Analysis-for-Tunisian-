@@ -1,0 +1,5 @@
+- general.seed=1
+- classifiermode=twolabels
+- models=bertMCased
+- model.architecture_name=bert_lstm
+- training.lr=3e-5

@@ -1,3 +1,2 @@
 .hydra
-data/*.csv
 src/__pycache__
